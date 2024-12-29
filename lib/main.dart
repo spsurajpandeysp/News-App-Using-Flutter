@@ -1,9 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:news/screen/HomeScreen.dart';
 import 'package:news/screen/SplashScreen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    await Firebase.initializeApp();
+    runApp(const MyApp());
+  } catch (e) {
+    debugPrint('Error initializing Firebase: $e');
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -16,12 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      
       home: SplashScreen(),
-      
     );
   }
 }
-
-
-  
