@@ -14,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int myIndex = 0;
 
   List<Widget> widgetList = [
-    ShowAllnews(),
+    ShowAllNews(),
     AddNewsscreen(),
     YourNewsscreen(),
     SavedNewsscreen()
@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Explore News"),
+        title: Text("News App"),
         backgroundColor: Color(0xFF0E86D4),
       ),
       backgroundColor: Colors.white,
